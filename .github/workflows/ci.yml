@@ -1,0 +1,30 @@
+# CI for the Archimedes plugin marketplace.
+#
+# Every plugin must compile in a Lua runtime, and index.json must be the
+# exact output of scripts/build_index.py.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate plugins and index
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install lupa
+        run: pip install lupa
+
+      - name: Rebuild the marketplace index
+        run: python scripts/build_index.py
+
+      - name: index.json is up to date
+        run: git diff --exit-code index.json
