@@ -1,3 +1,101 @@
 {
-  "plugins": []
+  "plugins": [
+    {
+      "id": "coinflip",
+      "name": "Coin Flip",
+      "version": "1.0.0",
+      "description": "A fair coin flip, as a command and as an agent tool.",
+      "author": "HiLleywyn",
+      "category": "Fun",
+      "path": "plugins/coinflip.lua",
+      "commands": [
+        "coinflip"
+      ],
+      "tools": [
+        "fun.coinflip"
+      ]
+    },
+    {
+      "id": "dice",
+      "name": "Dice",
+      "version": "1.0.0",
+      "description": "Roll dice with standard NdM notation.",
+      "author": "HiLleywyn",
+      "category": "Fun",
+      "path": "plugins/dice.lua",
+      "commands": [
+        "roll"
+      ],
+      "tools": [
+        "fun.roll_dice"
+      ]
+    },
+    {
+      "id": "eightball",
+      "name": "Magic 8-Ball",
+      "version": "1.0.0",
+      "description": "Ask the magic 8-ball a yes/no question.",
+      "author": "HiLleywyn",
+      "category": "Fun",
+      "path": "plugins/eightball.lua",
+      "commands": [
+        "8ball"
+      ],
+      "tools": [
+        "fun.magic_eightball"
+      ]
+    },
+    {
+      "id": "events",
+      "name": "Events",
+      "version": "1.0.0",
+      "description": "Calendar events with reminders, sharing and groups.",
+      "author": "HiLleywyn",
+      "category": "Productivity",
+      "path": "plugins/events.lua",
+      "commands": [
+        "event"
+      ],
+      "tools": []
+    },
+    {
+      "id": "groups",
+      "name": "Groups",
+      "version": "1.0.0",
+      "description": "Shared groups for notes, tasks and events.",
+      "author": "HiLleywyn",
+      "category": "Productivity",
+      "path": "plugins/groups.lua",
+      "commands": [
+        "group"
+      ],
+      "tools": []
+    },
+    {
+      "id": "notes",
+      "name": "Notes",
+      "version": "1.0.0",
+      "description": "Private and shared notes, with sharing and groups.",
+      "author": "HiLleywyn",
+      "category": "Productivity",
+      "path": "plugins/notes.lua",
+      "commands": [
+        "note"
+      ],
+      "tools": []
+    },
+    {
+      "id": "tasks",
+      "name": "Tasks",
+      "version": "1.0.0",
+      "description": "Tasks and to-do lists, with reminders, sharing and groups.",
+      "author": "HiLleywyn",
+      "category": "Productivity",
+      "path": "plugins/tasks.lua",
+      "commands": [
+        "task"
+      ],
+      "tools": []
+    }
+  ]
 }
