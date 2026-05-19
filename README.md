@@ -25,13 +25,34 @@ scripts/build_index.py  regenerates index.json from plugins/
 | `tasks` | Productivity | Tasks and to-do lists, with reminders. |
 | `events` | Productivity | Calendar events with reminders. |
 | `groups` | Productivity | Shared groups for notes, tasks and events. |
+| `git` | Developer | Read GitHub repositories: info, commits, files, issues, search. |
+| `webtools` | Utility | Fetch web pages, look up Wikipedia, check the weather. |
 | `coinflip` | Fun | Flip a coin -- the worked example. |
 | `dice` | Fun | Roll dice with standard NdM notation. |
 | `eightball` | Fun | Ask the magic 8-ball a question. |
 
 The `notes`, `tasks`, `events`, `groups` and `coinflip` plugins also ship
-bundled with Archimedes, so they are installed out of the box. `dice` and
-`eightball` are install-only -- they show the marketplace working end to end.
+bundled with Archimedes, so they are installed out of the box. The rest --
+`git`, `webtools`, `dice` and `eightball` -- are install-only marketplace
+plugins.
+
+### Agent tools
+
+Beyond prefix commands, some plugins register **agent tools** -- functions
+the model itself can call mid-conversation:
+
+| Plugin | Tools |
+|---|---|
+| `git` | `git.repo`, `git.commits`, `git.file`, `git.issues`, `git.search` |
+| `webtools` | `web.fetch`, `web.wikipedia`, `web.weather` |
+
+`git` works on public repositories with no setup; an optional GitHub token --
+the `.git setup` command, or the `PLUGIN_GIT_TOKEN` environment variable --
+raises the API rate limit. `webtools` needs nothing; its APIs are free.
+
+Image and video generation are not plugins: they are built into Archimedes
+as the `image.generate` and `video.generate` tools, both running on
+OpenRouter and tuned per server with `.ai model set image|video`.
 
 ## Installing a plugin
 
