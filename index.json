@@ -59,6 +59,19 @@
       "tools": []
     },
     {
+      "id": "expertmode",
+      "name": "Expert Mode",
+      "version": "1.0.0",
+      "description": "Let the model switch itself into a precise, rigorous answering mode for the rest of a turn.",
+      "author": "HiLleywyn",
+      "category": "Utility",
+      "path": "plugins/expertmode.lua",
+      "commands": [],
+      "tools": [
+        "mode.expert"
+      ]
+    },
+    {
       "id": "git",
       "name": "Git Tools",
       "version": "1.0.0",

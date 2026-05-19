@@ -27,14 +27,15 @@ scripts/build_index.py  regenerates index.json from plugins/
 | `groups` | Productivity | Shared groups for notes, tasks and events. |
 | `git` | Developer | Read GitHub repositories: info, commits, files, issues, search. |
 | `webtools` | Utility | Fetch web pages, look up Wikipedia, check the weather. |
+| `expertmode` | Utility | Let the model retune its own turn into precise expert mode. |
 | `coinflip` | Fun | Flip a coin -- the worked example. |
 | `dice` | Fun | Roll dice with standard NdM notation. |
 | `eightball` | Fun | Ask the magic 8-ball a question. |
 
 The `coinflip` plugin also ships bundled with Archimedes, so it is installed
 out of the box. Every other plugin here -- `notes`, `tasks`, `events`,
-`groups`, `git`, `webtools`, `dice` and `eightball` -- is an install-only
-marketplace plugin.
+`groups`, `git`, `webtools`, `expertmode`, `dice` and `eightball` -- is an
+install-only marketplace plugin.
 
 ### Agent tools
 
@@ -45,10 +46,13 @@ the model itself can call mid-conversation:
 |---|---|
 | `git` | `git.repo`, `git.commits`, `git.file`, `git.issues`, `git.search` |
 | `webtools` | `web.fetch`, `web.wikipedia`, `web.weather` |
+| `expertmode` | `mode.expert` |
 
 `git` works on public repositories with no setup; an optional GitHub token --
 the `.git setup` command, or the `PLUGIN_GIT_TOKEN` environment variable --
 raises the API rate limit. `webtools` needs nothing; its APIs are free.
+`expertmode` has no command at all: the model calls `mode.expert` mid-answer
+to drop into a low-temperature, rigorous mode for the rest of the turn.
 
 Image and video generation are not plugins: they are built into Archimedes
 as the `image.generate` and `video.generate` tools, both running on
