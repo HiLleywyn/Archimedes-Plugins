@@ -24,13 +24,37 @@ scripts/build_index.py  regenerates index.json from plugins/
 | `tasks` | Productivity | Tasks and to-do lists, with reminders. |
 | `events` | Productivity | Calendar events with reminders. |
 | `groups` | Productivity | Shared groups for notes, tasks and events. |
+| `imagegen` | Creative | Generate images from a text prompt. |
+| `videogen` | Creative | Generate videos from a text prompt. |
+| `git` | Developer | Read GitHub repositories: info, commits, files, issues, search. |
+| `webtools` | Utility | Fetch web pages, look up Wikipedia, check the weather. |
 | `coinflip` | Fun | Flip a coin -- the worked example. |
 | `dice` | Fun | Roll dice with standard NdM notation. |
 | `eightball` | Fun | Ask the magic 8-ball a question. |
 
 The `notes`, `tasks`, `events`, `groups` and `coinflip` plugins also ship
-bundled with Archimedes, so they are installed out of the box. `dice` and
-`eightball` are install-only -- they show the marketplace working end to end.
+bundled with Archimedes, so they are installed out of the box. The rest --
+`imagegen`, `videogen`, `git`, `webtools`, `dice` and `eightball` -- are
+install-only marketplace plugins.
+
+### Agent tools
+
+Beyond prefix commands, several plugins register **agent tools** -- functions
+the model itself can call mid-conversation:
+
+| Plugin | Tools |
+|---|---|
+| `imagegen` | `image.generate` |
+| `videogen` | `video.generate`, `video.status` |
+| `git` | `git.repo`, `git.commits`, `git.file`, `git.issues`, `git.search` |
+| `webtools` | `web.fetch`, `web.wikipedia`, `web.weather` |
+
+`imagegen` and `videogen` call an external generation API and need a key: a
+server owner runs `.image setup` / `.video setup` once. `git` works on public
+repositories with no setup. `webtools` needs nothing -- its APIs are free.
+
+Image APIs are slower than the default plugin HTTP timeout, so for `imagegen`
+raise `PLUGIN_HTTP_TIMEOUT_S` (to 60 or more) in the bot's environment.
 
 ## Installing a plugin
 

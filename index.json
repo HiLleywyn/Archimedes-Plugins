@@ -59,6 +59,25 @@
       "tools": []
     },
     {
+      "id": "git",
+      "name": "Git Tools",
+      "version": "1.0.0",
+      "description": "Read GitHub repositories: info, commits, files, issues, search.",
+      "author": "HiLleywyn",
+      "category": "Developer",
+      "path": "plugins/git.lua",
+      "commands": [
+        "git"
+      ],
+      "tools": [
+        "git.repo",
+        "git.commits",
+        "git.file",
+        "git.issues",
+        "git.search"
+      ]
+    },
+    {
       "id": "groups",
       "name": "Groups",
       "version": "1.0.0",
@@ -70,6 +89,21 @@
         "group"
       ],
       "tools": []
+    },
+    {
+      "id": "imagegen",
+      "name": "Image Generation",
+      "version": "1.0.0",
+      "description": "Generate images from a text prompt via an OpenAI-compatible API.",
+      "author": "HiLleywyn",
+      "category": "Creative",
+      "path": "plugins/imagegen.lua",
+      "commands": [
+        "image"
+      ],
+      "tools": [
+        "image.generate"
+      ]
     },
     {
       "id": "notes",
@@ -96,6 +130,40 @@
         "task"
       ],
       "tools": []
+    },
+    {
+      "id": "videogen",
+      "name": "Video Generation",
+      "version": "1.0.0",
+      "description": "Generate videos from a text prompt via Replicate-hosted models.",
+      "author": "HiLleywyn",
+      "category": "Creative",
+      "path": "plugins/videogen.lua",
+      "commands": [
+        "video"
+      ],
+      "tools": [
+        "video.generate",
+        "video.status"
+      ]
+    },
+    {
+      "id": "webtools",
+      "name": "Web Tools",
+      "version": "1.0.0",
+      "description": "Fetch web pages, look up Wikipedia, and check the weather.",
+      "author": "HiLleywyn",
+      "category": "Utility",
+      "path": "plugins/webtools.lua",
+      "commands": [
+        "wiki",
+        "weather"
+      ],
+      "tools": [
+        "web.fetch",
+        "web.wikipedia",
+        "web.weather"
+      ]
     }
   ]
 }
