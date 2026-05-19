@@ -59,6 +59,25 @@
       "tools": []
     },
     {
+      "id": "git",
+      "name": "Git Tools",
+      "version": "1.0.0",
+      "description": "Read GitHub repositories: info, commits, files, issues, search.",
+      "author": "HiLleywyn",
+      "category": "Developer",
+      "path": "plugins/git.lua",
+      "commands": [
+        "git"
+      ],
+      "tools": [
+        "git.repo",
+        "git.commits",
+        "git.file",
+        "git.issues",
+        "git.search"
+      ]
+    },
+    {
       "id": "groups",
       "name": "Groups",
       "version": "1.0.0",
@@ -96,6 +115,24 @@
         "task"
       ],
       "tools": []
+    },
+    {
+      "id": "webtools",
+      "name": "Web Tools",
+      "version": "1.0.0",
+      "description": "Fetch web pages, look up Wikipedia, and check the weather.",
+      "author": "HiLleywyn",
+      "category": "Utility",
+      "path": "plugins/webtools.lua",
+      "commands": [
+        "wiki",
+        "weather"
+      ],
+      "tools": [
+        "web.fetch",
+        "web.wikipedia",
+        "web.weather"
+      ]
     }
   ]
 }
