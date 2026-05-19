@@ -3,9 +3,10 @@
 The plugin marketplace for [Archimedes](https://github.com/HiLleywyn/Archimedes).
 
 A plugin is a single `.lua` file that can register prefix commands (with
-nested subcommand groups), agent tools the model can call, and background
-loops -- with no Python. This repository is the catalogue Archimedes reads
-when an operator runs `.ai plugins search` and `.ai plugins install`.
+nested subcommand groups), agent tools the model can call, background loops,
+and event handlers that react to Discord activity -- with no Python. This
+repository is the catalogue Archimedes reads when an operator runs
+`.ai plugins search` and `.ai plugins install`.
 
 ## Layout
 
@@ -62,15 +63,19 @@ M.manifest = {
   storage     = "myplugin",     -- optional shared document-store namespace
 }
 
-M.commands = { ... }            -- prefix commands
-M.tools    = { ... }            -- agent tools
-M.loops    = { ... }            -- background jobs
+M.commands  = { ... }           -- prefix commands
+M.tools     = { ... }           -- agent tools
+M.loops     = { ... }           -- background jobs
+M.events    = { ... }           -- gateway and cross-plugin event handlers
+M.on_load   = function() end    -- optional load hook
+M.on_unload = function() end    -- optional unload hook
 
 return M
 ```
 
-The full plugin contract -- the `arch` global, the per-call `ctx` table, the
-document store and card tables -- is documented in
+The full plugin contract -- the `arch` global (the document and key/value
+stores, the HTTP client, the Discord helpers, JSON and encoding utilities),
+the per-call `ctx` table, events and card tables -- is documented in
 [`plugins/README.md`](https://github.com/HiLleywyn/Archimedes/blob/main/plugins/README.md)
 in the Archimedes repository. The `coinflip` and `dice` plugins here are
 small, complete examples.
