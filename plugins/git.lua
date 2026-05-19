@@ -4,9 +4,10 @@
 -- recent commits, file contents, issues and pull requests, and repository
 -- search. Every call goes through the guarded plugin HTTP client.
 --
--- Public repositories work with no configuration. An admin can store a
--- GitHub token with `.git setup <token>` to raise the API rate limit and
--- reach private repositories the token can see.
+-- Public repositories work with no configuration. To raise the API rate
+-- limit and reach private repositories, supply a GitHub token either with
+-- the `.git setup <token>` command (per server) or with the
+-- PLUGIN_GIT_TOKEN environment variable (bot-wide).
 
 local M = {}
 
@@ -46,8 +47,11 @@ end
 
 local function get_token(guild_id)
   local value = arch.kv.get(ckey(guild_id, "token"))
-  if value == nil or value == "" then return nil end
-  return value
+  if value ~= nil and value ~= "" then return value end
+  -- Fall back to the operator-set PLUGIN_GIT_TOKEN environment variable.
+  local env = (arch.config or {}).token
+  if env ~= nil and env ~= "" then return env end
+  return nil
 end
 
 local function is_owner(ctx)

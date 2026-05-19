@@ -91,21 +91,6 @@
       "tools": []
     },
     {
-      "id": "imagegen",
-      "name": "Image Generation",
-      "version": "1.0.0",
-      "description": "Generate images from a text prompt via an OpenAI-compatible API.",
-      "author": "HiLleywyn",
-      "category": "Creative",
-      "path": "plugins/imagegen.lua",
-      "commands": [
-        "image"
-      ],
-      "tools": [
-        "image.generate"
-      ]
-    },
-    {
       "id": "notes",
       "name": "Notes",
       "version": "1.0.0",
@@ -130,22 +115,6 @@
         "task"
       ],
       "tools": []
-    },
-    {
-      "id": "videogen",
-      "name": "Video Generation",
-      "version": "1.0.0",
-      "description": "Generate videos from a text prompt via Replicate-hosted models.",
-      "author": "HiLleywyn",
-      "category": "Creative",
-      "path": "plugins/videogen.lua",
-      "commands": [
-        "video"
-      ],
-      "tools": [
-        "video.generate",
-        "video.status"
-      ]
     },
     {
       "id": "webtools",

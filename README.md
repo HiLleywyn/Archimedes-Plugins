@@ -24,8 +24,6 @@ scripts/build_index.py  regenerates index.json from plugins/
 | `tasks` | Productivity | Tasks and to-do lists, with reminders. |
 | `events` | Productivity | Calendar events with reminders. |
 | `groups` | Productivity | Shared groups for notes, tasks and events. |
-| `imagegen` | Creative | Generate images from a text prompt. |
-| `videogen` | Creative | Generate videos from a text prompt. |
 | `git` | Developer | Read GitHub repositories: info, commits, files, issues, search. |
 | `webtools` | Utility | Fetch web pages, look up Wikipedia, check the weather. |
 | `coinflip` | Fun | Flip a coin -- the worked example. |
@@ -34,27 +32,26 @@ scripts/build_index.py  regenerates index.json from plugins/
 
 The `notes`, `tasks`, `events`, `groups` and `coinflip` plugins also ship
 bundled with Archimedes, so they are installed out of the box. The rest --
-`imagegen`, `videogen`, `git`, `webtools`, `dice` and `eightball` -- are
-install-only marketplace plugins.
+`git`, `webtools`, `dice` and `eightball` -- are install-only marketplace
+plugins.
 
 ### Agent tools
 
-Beyond prefix commands, several plugins register **agent tools** -- functions
+Beyond prefix commands, some plugins register **agent tools** -- functions
 the model itself can call mid-conversation:
 
 | Plugin | Tools |
 |---|---|
-| `imagegen` | `image.generate` |
-| `videogen` | `video.generate`, `video.status` |
 | `git` | `git.repo`, `git.commits`, `git.file`, `git.issues`, `git.search` |
 | `webtools` | `web.fetch`, `web.wikipedia`, `web.weather` |
 
-`imagegen` and `videogen` call an external generation API and need a key: a
-server owner runs `.image setup` / `.video setup` once. `git` works on public
-repositories with no setup. `webtools` needs nothing -- its APIs are free.
+`git` works on public repositories with no setup; an optional GitHub token --
+the `.git setup` command, or the `PLUGIN_GIT_TOKEN` environment variable --
+raises the API rate limit. `webtools` needs nothing; its APIs are free.
 
-Image APIs are slower than the default plugin HTTP timeout, so for `imagegen`
-raise `PLUGIN_HTTP_TIMEOUT_S` (to 60 or more) in the bot's environment.
+Image and video generation are not plugins: they are built into Archimedes
+as the `image.generate` and `video.generate` tools, both running on
+OpenRouter and tuned per server with `.ai model set image|video`.
 
 ## Installing a plugin
 
