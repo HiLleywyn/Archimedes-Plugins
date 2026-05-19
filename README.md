@@ -31,10 +31,10 @@ scripts/build_index.py  regenerates index.json from plugins/
 | `dice` | Fun | Roll dice with standard NdM notation. |
 | `eightball` | Fun | Ask the magic 8-ball a question. |
 
-The `notes`, `tasks`, `events`, `groups` and `coinflip` plugins also ship
-bundled with Archimedes, so they are installed out of the box. The rest --
-`git`, `webtools`, `dice` and `eightball` -- are install-only marketplace
-plugins.
+The `coinflip` plugin also ships bundled with Archimedes, so it is installed
+out of the box. Every other plugin here -- `notes`, `tasks`, `events`,
+`groups`, `git`, `webtools`, `dice` and `eightball` -- is an install-only
+marketplace plugin.
 
 ### Agent tools
 
