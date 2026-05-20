@@ -21,6 +21,7 @@ scripts/build_index.py  regenerates index.json from plugins/
 
 | Plugin | Category | What it does |
 |---|---|---|
+| `archapp` | Utility | A guide to the Archimedes 3.0 application surface (Soul, Heartbeat, Scheduler, MCP, Dynamic UI, Service Chain). |
 | `notes` | Productivity | Private and shared notes, with sharing and groups. |
 | `tasks` | Productivity | Tasks and to-do lists, with reminders. |
 | `events` | Productivity | Calendar events with reminders. |
@@ -44,6 +45,7 @@ the model itself can call mid-conversation:
 
 | Plugin | Tools |
 |---|---|
+| `archapp` | `arch.about` |
 | `git` | `git.repo`, `git.commits`, `git.file`, `git.issues`, `git.search` |
 | `webtools` | `web.fetch`, `web.wikipedia`, `web.weather` |
 | `expertmode` | `mode.expert` |
