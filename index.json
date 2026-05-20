@@ -1,6 +1,21 @@
 {
   "plugins": [
     {
+      "id": "archapp",
+      "name": "Archimedes 3.0 Guide",
+      "version": "1.0.0",
+      "description": "Surfaces the Archimedes 3.0 application layer to the model and the user: Soul, Heartbeat, Scheduler, MCP, Dynamic UI, Service Chain.",
+      "author": "HiLleywyn",
+      "category": "Utility",
+      "path": "plugins/archapp.lua",
+      "commands": [
+        "arch3"
+      ],
+      "tools": [
+        "arch.about"
+      ]
+    },
+    {
       "id": "coinflip",
       "name": "Coin Flip",
       "version": "1.0.0",
